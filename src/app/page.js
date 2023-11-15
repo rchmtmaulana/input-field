@@ -18,6 +18,10 @@ export default function Home() {
     setInputNamaBaru(value)
   }
 
+  function tombolEnter(e) {
+    if (e.code == "Enter") handlerGantiNama()
+  }
+
   return (
     <div className='body'>
       <div className="banner-container">
@@ -46,6 +50,7 @@ export default function Home() {
         <input className='input-field'
           placeholder='Masukkan Nama Anda'
           onInput={(value) => inputHandler(value.target.value)}
+          onKeyDown={(value) => {tombolEnter(value)}}
           ></input>
         <div className="cta-banner-wrapper">
           {/* tombol cta */}
