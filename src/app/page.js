@@ -9,6 +9,7 @@ export default function Home() {
   
   const [nama, setNama] = useState('Nama Anda Disini')
   const [inputNamaBaru, setInputNamaBaru] = useState('')
+  const [empty, setEmpty] = useState(true)
 
   function handlerGantiNama() {
     setNama(inputNamaBaru)
@@ -16,10 +17,28 @@ export default function Home() {
 
   function inputHandler(value) {
     setInputNamaBaru(value)
+    setEmpty(value.trim() === '')
   }
 
   function tombolEnter(e) {
     if (e.code == "Enter") handlerGantiNama()
+  }
+
+  let content;
+  if (empty) {
+    content = (
+      <button className="cta-active">
+        <p>ganti</p>
+      </button>
+    );
+  } else {
+    content = (
+      <button className="cta" onClick={() => {
+        handlerGantiNama();
+      }}>
+      <p>ganti</p>
+    </button>
+    );
   }
 
   return (
@@ -54,12 +73,7 @@ export default function Home() {
           ></input>
         <div className="cta-banner-wrapper">
           {/* tombol cta */}
-            <button className='cta-button'
-              onClick={() => {
-                handlerGantiNama();
-              }}>
-              Ganti
-            </button>
+          {content}
         </div>
       </div>
     </div>
