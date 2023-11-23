@@ -28,7 +28,7 @@ export default function Home() {
   if (empty) {
     content = (
       <button className="cta-active">
-        <p>Disabled</p>
+        <p>disabled</p>
       </button>
     );
   } else {
