@@ -28,7 +28,7 @@ export default function Home() {
   if (empty) {
     content = (
       <button className="cta-active">
-        <p>ganti</p>
+        <p>Disabled</p>
       </button>
     );
   } else {
@@ -36,7 +36,7 @@ export default function Home() {
       <button className="cta" onClick={() => {
         handlerGantiNama();
       }}>
-      <p>ganti</p>
+      <p>Ganti</p>
     </button>
     );
   }
