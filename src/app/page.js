@@ -36,7 +36,7 @@ export default function Home() {
       <button className="cta" onClick={() => {
         handlerGantiNama();
       }}>
-      <p>Ganti</p>
+      <p>ganti</p>
     </button>
     );
   }
